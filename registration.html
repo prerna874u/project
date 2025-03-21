@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./form.css">
+    <style>
+        body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white; /* Adjust text color for better contrast */
+}
+
+h2 {
+    color: white; /* Ensure the header text is visible on the gradient background */
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for inputs */
+    color: #000; /* Black text color for inputs */
+}
+
+.form-control::placeholder {
+    color: #555; /* Placeholder text color */
+}
+
+.btn-primary {
+    background-color: #2575fc;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1a5bb8;
+}
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Student Registration Form</h2>
+        <form id="registrationForm" class="mt-4">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="name" class="form-control" id="lastName" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" name="mail" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phn" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" class="form-control" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" name="gender
+                " id="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./form.js"></script>
+</body>
+<script>
+   document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Fetch form values
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const dob = document.getElementById('dob').value;
+    const gender = document.getElementById('gender').value;
+
+    // Validate form data (example)
+    if (!firstName || !lastName || !email || !phone || !dob || !gender) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    // For now, we'll just log the values to the console
+    console.log('First Name:', firstName);
+    console.log('Last Name:', lastName);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Date of Birth:', dob);
+    console.log('Gender:', gender);
+
+    alert('Registration successful!');
+
+    // Clear the form
+    document.getElementById('registrationForm').reset();
+}); 
+</script>
+</html>
