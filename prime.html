@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Mix</title>
+</head>
+<style>
+
+ /* H3{
+    text-emphasis-color: pink;
+background-color: rgb(141, 141, 187);
+text-decoration: underline;
+    } */
+    
+
+</style>
+<body style="text-align: center;background-color: rgb(206, 201, 233);">
+    <H3>PROGRAM OF PRIME NUMBER.</H3>
+    <input type="number" id="prime">
+    <button onclick="isprime()">Submit</button>
+    <p id="output"></p>
+
+        <H3>PROGRAM OF EVEN & ODD NUMBER.</H3>
+        <input type="number" id="evenodd">
+        <button onclick="evenodd()">Submit</button>
+        <p id="evenoutput"></p>
+
+    <H3>FACTORIAL NUMBER.</H3>
+    <input type="number" id="factorial">
+    <button onclick="factorial()">Submit</button>
+    <p id="foutput"></p>
+</body>
+<script>
+    function isprime(){
+        var element = document.getElementById("prime")
+        var output = document.getElementById("output")
+        let number = element.value;
+        let flag = false;
+        for(let i=2; i<=number/2; i++){
+            if(number % i==0){
+                flag =true;
+            }
+        }
+        if(flag == true){
+            output.innerHTML= number + "not a prime number"
+        }else{
+            output.innerHTML= number + "is a prime number"
+        }
+    }
+
+        function evenodd(){
+            var element = document.getElementById("evenodd")
+            var output = document.getElementById("evenoutput")
+            let number = element.value;
+           
+           
+                if(number % 2 ==0){
+                  
+                output.innerHTML= number + " is a even number"
+            }else{
+                output.innerHTML= number + "is a odd  number"
+            }
+        }
+    
+    
+            function factorial(){
+                var element = document.getElementById("factorial")
+                var output = document.getElementById("foutput")
+                let number = element.value;
+               let factorial = 1;
+               for(let i=1; i<=number; i++){
+                factorial =factorial *i;
+                output.innerHTML= " is a factorial number"+ factorial
+               }
+               
+            }
+            </script>
+</html>
